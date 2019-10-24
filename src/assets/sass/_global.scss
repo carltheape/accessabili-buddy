@@ -1,0 +1,178 @@
+body{
+    padding: 0;
+    margin: 0;
+    min-width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+.bg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -999999;
+    opacity: 0.2;
+    background-image: url("/images/RP_illustration_pattern-03.png");
+    background-size: 750px;
+}
+.hidden{
+    visibility: hidden;
+}
+//--------------DEFAULT FOCUS STATES--------------//
+*:focus{
+    outline: solid 2px $base-blue;
+}
+.using-mouse{
+    *:focus{
+        outline: 0;
+    }
+}
+//--------------DEFAULT FONT--------------//
+@font-face {
+    font-family: 'RP';
+    src: url('/fonts/d-Din/D-DINExp.otf') format('woff2');
+}
+@font-face {
+    font-family: 'RP-bold';
+    src: url('/fonts/d-Din/D-DINExp-Bold.otf') format('woff2');
+}
+*{
+    font-family: RP, Impact, Charcoal, sans-serif;
+}
+
+//--------------BUTTONS--------------//
+button, .button{
+    margin: 15px;
+    padding: 15px;
+    border-radius: 5px; 
+    border: 0;
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1rem;
+    @include btn-theme-1;
+
+    &:hover, &:focus{
+        filter: brightness(85%);
+    }
+    &:active, &.key-active{
+        box-shadow: inset 0px 0px 25px -5px rgba(0,0,0,0.75);
+        filter: brightness(85%);
+    }
+}
+
+//--------------LABELS--------------//
+label{
+    @include label-theme-1;
+}
+
+//--------------TEXT TAGS--------------//
+p{
+    text-align: left;
+    font-size: 1rem;
+    font-family: RP, Impact, Charcoal, sans-serif;
+    padding: 15px;
+    line-height: 1.5rem;
+    text-indent: 3rem;
+}
+span{
+    line-height: 1.5rem;
+}
+a{
+    color: $base-red;
+    text-decoration: none;
+    font-weight: 900;
+    &:hover, &:focus{
+        text-decoration: underline; 
+    }
+}
+
+ul,ol{
+    li{
+        font-size: 1rem;
+        font-family: RP, Impact, Charcoal, sans-serif;
+        text-align: left;
+    }
+}
+img{
+    max-width: 100%;
+}
+//--------------COLOR BLIND FILTERS--------------//
+@mixin protanopia{
+    filter: url("/images/color-blind.svg#protanopia");
+    filter: url("#protanopia");
+}
+@mixin protanomaly{
+    filter: url("/images/color-blind.svg#protanomaly");
+}
+@mixin deuteranopia{
+    filter: url("/images/color-blind.svg#deuteranopia");
+}
+@mixin deuteranomaly{
+    filter: url("/images/color-blind.svg#deuteranomaly");
+}
+@mixin tritanopia{
+    filter: url("/images/color-blind.svg#tritanopia");
+}
+@mixin tritanomaly{
+    filter: url("/images/color-blind.svg#tritanomaly");
+}
+@mixin achromatopsia{
+    filter: url("/images/color-blind.svg#achromatopsia");
+}
+@mixin achromatomaly{
+    filter: url("/images/color-blind.svg#achromatomaly");
+}
+
+.protanopia{
+@include protanopia;
+}
+.protanomaly{
+@include protanomaly;
+}
+.deuteranopia{
+@include deuteranopia;
+}
+.deuteranomaly{
+@include deuteranomaly;
+}
+.tritanopia{
+@include tritanopia;
+}
+.tritanomaly{
+@include tritanomaly;
+}
+.achromatopsia{
+@include achromatopsia;
+}
+.achromatomaly{
+@include achromatomaly;
+}
+
+//--------------ACCORDION--------------//
+.accordion-container{
+    .accordion-trigger{
+        cursor: pointer;
+    }
+    .accordion{
+        overflow: hidden;
+        transition: height 0.2s;
+        
+    
+        &:not(.active){
+            height: 0px;
+            transition: height 0.2s;
+        }
+        *{
+            transition: visibility 0.2s;
+        }       
+    }
+}
+
+//--------------CODE BLOCKS--------------//
+.language-markup{
+        white-space: pre-wrap !important;
+        word-break: break-word !important;
+        margin: 0 !important;   
+}

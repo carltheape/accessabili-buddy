@@ -1,0 +1,195 @@
+form, .form{
+    text-align: center;
+}
+//--------------FIELD SET--------------------//
+fieldset{
+    border: solid 2px $grey-lt;
+    border-radius: 5px;
+    margin: 25px 0;
+
+    legend{
+        padding: 0 25px;
+        background-color: $white;
+        margin: auto;
+
+    }
+    label{
+        margin: 15px;
+        display: inline-block;
+    }
+    ul{
+        padding: 0;
+        margin: 0;
+        li{
+            display: inline-block;
+        }
+    }
+}
+
+//--------------CHECKBOXES--------------------//
+label{
+    position: relative;
+}
+  input[type=checkbox] {
+    margin: auto 10px auto 0;
+    position: relative;
+    display: inline-block;
+    transform: translateY(25%);
+    opacity: 1; // hide it
+    z-index: 1;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    box-shadow: none;
+    outline: none;
+
+    &:focus{
+      & + span {
+          outline: solid 2px $base-blue;
+      }
+    }
+
+    & + span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        height: 27px;
+        width: 27px;
+        border: solid 2px $base-red;
+        background-color: $base-red;
+    }
+
+    & + span:before {
+        transform: scale(0);
+        transition: transform 0.3s;
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-image: url(/images/icon-check-white.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 16px 16px;
+        z-index: 1;
+    }
+
+    &:checked {
+        & + span:before {
+            transform: scale(1);
+            transition: transform 0.3s;
+        }
+    }
+
+    @include ios-only {
+        &:after, &:before {
+            display: none;
+        }
+    }
+}
+.using-mouse{
+
+    input[type=checkbox]:focus {
+        & + span{
+            outline: 0;
+        }
+    }
+}
+
+//--------------RADIO BUTTONS--------------------//
+input[type=radio] {
+    margin: auto 10px auto 0;
+    position: relative;
+    display: inline-block;
+    transform: translateY(25%);
+    opacity: 1; // hide it
+    z-index: 1;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    margin: 0 10px 0 0;
+    box-shadow: none;
+
+    & + span {
+        position: absolute;
+        height: 25px;
+        width: 25px;
+        top: 15%;
+        left: 0;
+        z-index: 1;
+        border: solid 2px $base-blue;
+        background-color: $white;
+        border-radius: 50%;
+    }
+
+    & + span:before {
+        transform: scale(0) translate(-50%, -50%);
+        content: "";
+        position: absolute;
+        height: 50%;
+        width: 50%;
+        top: 50%;
+        left: 50%;
+        background-color: $base-blue;
+        z-index: 1;
+        border-radius: 50%;
+    }
+
+    &:checked {
+        & + span:before {
+            transform: scale(1) translate(-50%, -50%);
+        }
+    }
+
+    @include ios-only {
+        &:after, &:before {
+            display: none;
+        }
+    }
+}
+
+//--------------SEARCH INPUTS--------------------//
+.search-group{
+    display: inline;
+    position: relative;
+    input[type=search]{
+        padding: 10px;
+        min-width: 300px;
+        max-width: 100%;
+
+        @include small-screen{
+            min-width: 0px;
+        }
+
+        &::placeholder{
+            color: $grey-dk;
+        }
+        &:valid{
+            & ~ label{
+                opacity: 1;
+                top: -100%;
+                transition: top 0.2s, opacity 0.2s;
+                @include small-screen{
+                    top: -25%;
+                }
+            }
+        }
+    }
+    label{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10px;
+        margin: 0;
+        opacity: 0;
+        transition: top 0.2s, opacity 0.2s;
+        pointer-events: none;
+    }
+    input[type=submit]{
+        background-image: url(/images/icon-search-blue.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        vertical-align: middle;
+    }
+
+}

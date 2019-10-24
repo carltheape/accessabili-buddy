@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="23px" viewBox="0 0 22 23" version="1.1">
+  <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+  <title>Search</title>
+  <desc>Created with Sketch.</desc>
+  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Navigation/-Desktop-" transform="translate(-1374.000000, -85.000000)" fill-rule="nonzero">
+      <g id="Main-Nav" transform="translate(0.000000, 55.000000)">
+        <g id="Search" transform="translate(1386.500000, 43.000000) rotate(-45.000000) translate(-1386.500000, -43.000000) translate(1379.000000, 30.000000)">
+          <path d="M6.1981931,17.863208 L8.98080179,17.863208 L8.98080179,24.1240776 C8.98080179,24.8924737 8.35789362,25.5153819 7.58949744,25.5153819 L7.58949744,25.5153819 C6.82110127,25.5153819 6.1981931,24.8924737 6.1981931,24.1240776 L6.1981931,17.863208 Z" id="Rectangle" fill="#000000"/>
+          <circle id="Oval" stroke="#000000" stroke-width="2" cx="7.83544763" cy="7.44837333" r="7"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

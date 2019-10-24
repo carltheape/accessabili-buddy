@@ -1,0 +1,13 @@
+@mixin btn-theme-1 {
+    background-color: $base-yellow;
+    color: $black;
+    cursor: pointer;
+    font-weight: 700;
+    
+}
+
+@mixin label-theme-1 {
+    color: $black;
+    cursor: pointer;
+    font-weight: 700;
+}
